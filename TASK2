@@ -1,0 +1,16 @@
+Task-2 "Creating a VPC Peering Connection & Transit gateways in AWS "
+
+1- Creation of VPCs:
+You will create two separate VPCs, named VPC1 and VPC2, with distinct CIDR blocks to avoid IP address conflicts. 
+Each VPC will be isolated and function as an independent network environment.
+
+2- Configuration of Subnets:
+Within each VPC, you will create multiple subnets distributed across different availability zones (AZs) for high availability and fault tolerance.
+Subnets will be appropriately sized and configured to accommodate the required number of EC2 instances.
+
+3- A peering connection will be 
+established between VPC1 and VPC2 to facilitate private communication between resources residing in each VPC.
+This peering connection will allow traffic to flow securely between the instances in VPC1 and VPC2, leveraging private IP addresses.
+
+4- Create Transit Gateway and Configure Attachment Between VPCs that you created previously 
+
