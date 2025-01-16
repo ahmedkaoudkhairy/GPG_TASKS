@@ -1,0 +1,50 @@
+
+Introduction:
+The objective of this scenario is to establish a robust and secure AWS environment utilizing a single Availability Zone architecture with an Internet gateway and Network Firewall. This setup will enhance network security while allowing controlled internet access.
+Components:
+
+VPC Setup:
+
+Create a VPC with CIDR block 10.0.0.0/16
+Configure three subnets within this VPC:
+a. Firewall subnet (10.0.0.0/16)
+b. Customer subnet (10.0.2.0/24)
+c. Internet gateway subnet (10.0.2.0/24)
+
+
+Internet Gateway:
+
+Set up an Internet gateway (igw-1232) to allow communication between the VPC and the internet
+Attach it to the VPC and configure appropriate routing
+
+
+Network Firewall:
+
+Deploy an AWS Network Firewall in the Firewall subnet (10.0.4.0/28)
+Configure firewall rules to control traffic between the internet and the customer subnet
+
+
+Routing Configuration:
+
+Set up route tables for each subnet to direct traffic appropriately:
+a. Internet gateway subnet: Route internet-bound traffic (0.0.0.0/0) to the Internet gateway
+b. Firewall subnet: Route internal traffic to VPC local and internet traffic to the Internet gateway
+c. Customer subnet: Route all outbound traffic through the Network Firewall
+
+
+Security Groups:
+
+Create and configure security groups for resources in the customer subnet to further control inbound and outbound traffic
+
+
+Testing and Verification:
+
+Launch EC2 instances in the customer subnet
+Test connectivity and verify that traffic is properly routed through the Network Firewall
+Confirm that security policies are enforced as expected
+
+
+
+For detailed guidance on setting up the Network Firewall, please refer to the AWS documentation:
+https://docs.aws.amazon.com/network-firewall/latest/developerguide/getting-started.html
+This task will result in a single-zone architecture with enhanced security through the use of an Internet gateway and Network Firewall, similar to the diagram provided.
