@@ -1,0 +1,17 @@
+ntroduction:
+The objective of this scenario is to establish a robust and secure AWS environment utilizing various AWS services including EC2 instances, a Load Balancer, Web Application Firewall (WAF),
+
+Components:
+
+EC2 Instances:
+Launch EC2 instances to host your application or service.
+Ensure that the EC2 instances are configured with the necessary security groups to restrict access appropriately.
+
+Load Balancer:
+Utilize an Application Load Balancer (ALB) or Network Load Balancer (NLB) based on your requirements.
+
+Web Application Firewall (WAF):
+Set up a Web Application Firewall (WAF) to protect your web applications from common web exploits.
+Define rules in WAF to filter and monitor HTTP/HTTPS requests that are forwarded to the EC2 instances via the Load Balancer. test add Rate-based rule and originates from country
+
+For information , please follow the steps outlined in the link provided below:
