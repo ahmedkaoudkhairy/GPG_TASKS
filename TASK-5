@@ -1,0 +1,57 @@
+Introduction:
+The objective of this scenario is to establish a robust and secure AWS environment using Network Firewall. This setup will enhance network security while allowing controlled internet access.
+Components:
+
+VPC Setup:
+
+Create a Hub-VPC with CIDR block 10.0.0.0/16
+Configure three subnets within this VPC:
+a. Firewall subnet (10.0.1.0/24)
+b. Jump-Server subnet (10.0.2.0/24)
+
+
+Create a Spoke-VPC with CIDR block 20.0.0.0/16
+Configure two private subnets within this VPC:
+a. Spoke-1-Subnet (20.0.1.0/24)
+b. Spoke-2-Subnet (20.0.1.0/24)
+
+
+Internet Gateway:
+
+Set up an Internet gateway (iGW) and NAT gateway to allow communication between the Hub-VPC and the internet
+Attach it to the VPC and configure appropriate routing
+
+
+Network Firewall:
+
+Deploy an AWS Network Firewall in the Firewall subnet (10.0.1.0/24)
+Configure firewall rules to control traffic between the internet, Hub-VPC and Spoke-VPC
+
+
+Routing Configuration:
+
+Set up route tables for each subnet to direct traffic appropriately:
+
+Security Groups:
+
+Create and configure security groups for resources in Hub and Spoke VPCs to further control inbound and outbound traffic
+
+
+Testing and Verification:
+
+Launch one EC2 Instance ( Jump-Server ) in the Hub-VPC
+Launch two EC2 instances ( VM-01 , VM-02 ) in the Spoke-VPC
+Test connectivity and verify that traffic is properly routed through the Network Firewall
+Confirm that security policies are enforced as expected
+
+1- VM-01 can ping VM-02 , but VM-02 can not ping VM-01
+2- VM-02 can SSH on VM-01, but VM-01 can not SSH on VM-02
+3- Jump-Server can SSH on VM-01, and can not SSH on VM-02
+
+
+
+For detailed guidance on setting up the Network Firewall, please refer to the AWS documentation:
+https://docs.aws.amazon.com/network-firewall/latest/developerguide/getting-started.html
+This task will result in a single-zone architecture with enhanced security through the use of an Internet gateway and Network Firewall, similar to the diagram provided.
+
+
