@@ -1,0 +1,53 @@
+Task 9
+
+Setting Up a Site-to-Site VPN Between Two AWS Regions
+
+*Objective:*
+Create a secure and encrypted Site-to-Site VPN connection between two different AWS regions, enabling private networks in each region to communicate securely with each other.
+
+*Steps:*
+
+*1. Create Virtual Private Cloud (VPC):*
+- *Region A:*
+  - Create a new VPC and define an appropriate CIDR block.
+  - Create Subnets in different Availability Zones.
+  - Create and configure an Internet Gateway and attach it to the VPC.
+  - Create a Route Table and update the routes to allow internet connectivity.
+
+- *Region B:*
+  - Repeat the same steps to create a VPC in another region (Region B).
+
+*2. Create Virtual Private Gateway (VGW) in Each Region:*
+- *Region A:*
+  - Create a Virtual Private Gateway.
+  - Attach the VGW to your VPC.
+  - Update the Route Table to add a route pointing to the VGW.
+
+- *Region B:*
+  - Repeat the steps to create and configure a Virtual Private Gateway in Region B.
+
+*3. Create Customer Gateway (CGW):*
+- *Region A:*
+  - Create a Customer Gateway pointing to the public IP address of the Virtual Private Gateway in Region B.
+
+- *Region B:*
+  - Create a Customer Gateway pointing to the public IP address of the Virtual Private Gateway in Region A.
+
+*4. Create Site-to-Site VPN Connections:*
+- *Region A:*
+  - Create a VPN Connection between the Virtual Private Gateway in Region A and the Customer Gateway pointing to Region B.
+  - Download the VPN configuration and save it for later use.
+
+- *Region B:*
+  - Repeat the steps to create a VPN Connection between the Virtual Private Gateway in Region B and the Customer Gateway pointing to Region A.
+
+*5. Configure Route Tables to Route Traffic Between Regions:*
+- *Region A:*
+  - Update the Route Table in the VPC to add a route pointing to the VPN Connection for connecting to Region B.
+
+- *Region B:*
+  - Update the Route Table in the VPC to add a route pointing to the VPN Connection for connecting to Region A.
+
+6. Test Connectivity:
+- Launch EC2 instances in the Subnets of both regions.
+- Verify that the EC2 instances in Region A can communicate with the EC2 instances in Region B over the VPN.
