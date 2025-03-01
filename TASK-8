@@ -1,0 +1,28 @@
+Task 11
+Scenario: Serverless Backup System & Auto Shutdown on Low Utilization
+Task Description:
+Your task is to develop an automated backup system using AWS Lambda that archives data from an EC2 instance to Amazon S3 and shuts down the instance when CPU utilization remains low for a specific period. This automation ensures cost savings by backing up inactive resources and stopping underutilized instances.
+
+Objective:
+The objective of this task is to implement an automated mechanism that monitors EC2 instances and optimizes resource usage. By detecting periods of low CPU utilization, the system automatically creates a backup and shuts down instances to reduce unnecessary costs.
+
+And also, create an AWS Lambda function that continuously checks EC2 CPU utilization, triggers an AMI backup if the threshold is met, and stops the instance to optimize cost efficiency.
+
+Instructions:
+Setup:
+- Use the AWS Lambda service to create the automation function.
+- Utilize Amazon CloudWatch to monitor CPU utilization.
+- Store archived data in Amazon S3 for easy retrieval.
+Functionality:
+- Configure CloudWatch alarms to monitor EC2 instances' CPU utilization.
+- If CPU usage remains below 5% for 30 minutes, trigger a Lambda function to back up the instance.
+- The Lambda function will:
+  . Create an AMI (Amazon Machine Image) snapshot of the EC2 instance.
+  . Stop the instance after backup completion.
+Testing:
+- Simulate low CPU usage by running a low-load workload on an EC2 instance.
+- Verify that the Lambda function:
+  . Detects low utilization and triggers backup.
+  . Creates an AMI successfully.
+  . Stops the EC2 instance after the backup process.
+- Ensure thorough testing to confirm automation reliability and cost savings.
