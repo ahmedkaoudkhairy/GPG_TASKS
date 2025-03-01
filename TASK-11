@@ -1,0 +1,61 @@
+Task 14
+Migrate EC2 Instance from One Region to Another Using AWS Application Migration Service (AWS MGN)
+
+Scenario: Cross-Region EC2 Instance Migration with AWS MGN
+
+Task Description:
+Your task is to migrate an EC2 instance from one AWS region to another using AWS Application Migration Service (AWS MGN). AWS MGN simplifies the migration process by automatically converting your source servers to run natively on AWS. This service minimizes downtime and ensures a seamless transition of your applications and data to the target region.
+
+Objective:
+Learn how to use AWS Application Migration Service (AWS MGN) to migrate an EC2 instance across AWS regions, enabling you to relocate your infrastructure with minimal disruption and maximum efficiency.
+
+Instructions:
+Set Up AWS Application Migration Service (AWS MGN)
+
+Navigate to the AWS MGN Console in the AWS Management Console.
+
+Ensure that the source EC2 instance meets the prerequisites for migration (e.g., supported operating system, network connectivity).
+
+Install the AWS Replication Agent on the source EC2 instance to enable data replication.
+
+Configure the Source Server in AWS MGN
+
+In the AWS MGN Console, add the source EC2 instance as a source server.
+
+Configure replication settings, such as the target region, subnet, and instance type.
+
+Start data replication from the source EC2 instance to the target region.
+
+Launch the Target EC2 Instance in the Destination Region
+
+Once replication is complete, use AWS MGN to perform a test launch of the target EC2 instance in the destination region.
+
+Verify that the test instance is functioning correctly and that all data and applications have been successfully replicated.
+
+Cut Over to the Target EC2 Instance
+
+After successful testing, initiate the cutover process in AWS MGN.
+
+Stop the source EC2 instance and finalize the launch of the target EC2 instance in the destination region.
+
+Update DNS records or any other configurations to point to the new instance in the target region.
+
+Verify the Migration
+
+Ensure that the target EC2 instance in the destination region is fully operational.
+
+Validate that all applications and services are running as expected.
+
+Decommission the source EC2 instance if no longer needed.
+
+Key Benefits of Using AWS MGN:
+Minimal Downtime: AWS MGN ensures near-zero downtime during migration.
+
+Automated Replication: The service automates the replication of your source servers to AWS.
+
+Simplified Process: AWS MGN handles the conversion of source servers to run natively on AWS.
+
+For More Information:
+Refer to the official AWS documentation for detailed steps and best practices:
+
+https://docs.aws.amazon.com/mgn/latest/ug/what-is-application-migration-service.html 
