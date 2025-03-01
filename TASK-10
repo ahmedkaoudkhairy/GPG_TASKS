@@ -1,0 +1,23 @@
+Task 13
+
+Push Docker Images to AWS ECR and Deploy to ECS Cluster
+
+Scenario: Containerized Application Deployment
+
+Task Description:
+Your task is to push Docker images to Amazon ECR and then deploy these images to an ECS cluster, creating a scalable and manageable container-based application environment in AWS.
+
+Objective:
+Learn the process of storing container images in ECR and deploying them to an ECS cluster, enabling efficient management and scaling of containerized applications.
+
+Instructions:
+Create an ECR Repository
+Push Docker Images to ECR
+Create an ECS Cluster
+Create an ECS Service
+
+This concise outline covers the essential components of the process, from storing your Docker images in ECR to running them as services in ECS. Each of these topics represents a key step in the workflow of deploying containerized applications in AWS.
+
+For information , please follow the steps outlined in the link provided below:
+
+https://docs.aws.amazon.com/AmazonECR/latest/userguide/docker-push-ecr-image.html 
