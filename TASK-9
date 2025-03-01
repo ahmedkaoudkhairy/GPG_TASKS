@@ -1,0 +1,32 @@
+Task 12
+
+we'll need to set up a system using AWS services to detect and respond to a potential threat. 
+
+1- Set up two EC2 instances:  First EC2: With a public (Trusted) IP address
+& Second EC2  : With an IP address designated as a threat
+
+2- Configure Amazon GuardDuty to monitor your AWS environment
+
+3- Set up an EventBridge rule to capture GuardDuty findings
+
+4- Create a Lambda function to stop the first EC2 instance
+
+5- Connect EventBridge to the Lambda function
+
+
+To test this setup:
+
+Attempt to connect from the first EC2 instance (with the white IP) to the second EC2 instance (with the threat IP)
+GuardDuty should detect this as a suspicious activity and generate a finding
+The EventBridge rule will trigger the Lambda function
+The Lambda function will stop the first EC2 instance
+
+Remember to replace the placeholder instance ID in the Lambda function code with the actual ID of your first EC2 instance. Also, ensure that the Lambda function has the necessary IAM permissions to stop EC2 instances.
+
+Additional bonus visio diagramming
+
+For information , please follow the steps outlined in the link provided below:
+
+https://docs.aws.amazon.com/guardduty/latest/ug/what-is-guardduty.html
+https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-what-is.html
+https://docs.aws.amazon.com/lambda/latest/dg/getting-started.html 
